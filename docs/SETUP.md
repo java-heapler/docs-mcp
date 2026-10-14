@@ -5,8 +5,8 @@ This package connects a local CLI and MCP server to the standard Google Docs API
 ## Install and verify offline
 
 ```sh
-git clone https://github.com/java-heapler/docs-mcp.git
-cd docs-mcp
+git clone https://github.com/java-heapler/google-docs-mcp.git
+cd google-docs-mcp
 uv sync --locked
 uv run pytest
 uv build
@@ -25,16 +25,16 @@ google-docs doctor
 5. Run the explicit login below. Select the intended account and grant the requested Docs access. The application requests `https://www.googleapis.com/auth/documents`, which permits document reads and writes within that account's access. It is not a per-document scope. This CLI does not implement a Google Picker flow.
 
 ```sh
-mkdir -p "$HOME/.config/docs-mcp"
-chmod 700 "$HOME/.config/docs-mcp"
+mkdir -p "$HOME/.config/google-docs-mcp"
+chmod 700 "$HOME/.config/google-docs-mcp"
 # Put the downloaded Desktop client at this location, then:
-chmod 600 "$HOME/.config/docs-mcp/client_secret.json"
-google-docs auth login --client-secrets "$HOME/.config/docs-mcp/client_secret.json"
+chmod 600 "$HOME/.config/google-docs-mcp/client_secret.json"
+google-docs auth login --client-secrets "$HOME/.config/google-docs-mcp/client_secret.json"
 ```
 
 On macOS the login uses the default browser. Select the intended Google account when prompted.
 
-The app opens a browser and listens on a random loopback port on `127.0.0.1` for up to 180 seconds. PKCE is enabled. A successful login saves the token atomically with mode `600` at `~/.config/docs-mcp/token.json`. Ordinary CLI/MCP operations never initiate browser login.
+The app opens a browser and listens on a random loopback port on `127.0.0.1` for up to 180 seconds. PKCE is enabled. A successful login saves the token atomically with mode `600` at `~/.config/google-docs-mcp/token.json`. Ordinary CLI/MCP operations never initiate browser login.
 
 Use `auth login --token-file /absolute/private/token.json` for another token location, then set `GOOGLE_DOCS_TOKEN_FILE` to that location for subsequent commands and the MCP host. Tokens must be outside source repositories and not symlinks. Do not put tokens, client secrets, or service-account keys in Git or chat.
 

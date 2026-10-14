@@ -49,7 +49,7 @@ class _TimedFlow(InstalledAppFlow):
 
 
 def _token_path(token_path=None):
-    return Path(token_path or os.environ.get('GOOGLE_DOCS_TOKEN_FILE') or '~/.config/docs-mcp/token.json').expanduser().absolute()
+    return Path(token_path or os.environ.get('GOOGLE_DOCS_TOKEN_FILE') or '~/.config/google-docs-mcp/token.json').expanduser().absolute()
 
 
 def _check_token_path(path):

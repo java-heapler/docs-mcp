@@ -1,4 +1,4 @@
-# docs-mcp
+# google-docs-mcp
 
 Google Docs from a CLI or an MCP agent, backed by Google's official Docs API. Uses the same preview-first architecture as [google-sheets-mcp](https://github.com/java-heapler/google-sheets-mcp).
 
@@ -17,7 +17,7 @@ This covers the Docs API, not every action in the Google Docs UI. File discovery
 Requires Python 3.11+ and [uv](https://docs.astral.sh/uv/).
 
 ```sh
-uv tool install git+https://github.com/java-heapler/docs-mcp.git
+uv tool install git+https://github.com/java-heapler/google-docs-mcp.git
 google-docs --help
 google-docs doctor
 ```
@@ -28,7 +28,7 @@ Enable **Google Docs API** in your Google Cloud project, configure a Desktop OAu
 google-docs auth login --client-secrets /absolute/private/client_secret.json
 ```
 
-See the [setup runbook](docs/SETUP.md) for consent, test users, credential storage, service accounts, and troubleshooting. The token is separate from Sheets at `~/.config/docs-mcp/token.json`.
+See the [setup runbook](docs/SETUP.md) for consent, test users, credential storage, service accounts, and troubleshooting. The token is separate from Sheets at `~/.config/google-docs-mcp/token.json`.
 
 ## Examples
 

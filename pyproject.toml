@@ -3,7 +3,7 @@ requires = ["hatchling>=1.27"]
 build-backend = "hatchling.build"
 
 [project]
-name = "docs-mcp"
+name = "google-docs-mcp"
 version = "0.1.0"
 description = "Google Docs CLI and MCP server with explicit write previews"
 readme = "README.md"

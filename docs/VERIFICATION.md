@@ -30,6 +30,6 @@ Successful checks against a new synthetic document:
 10. A nested child tab is created, written, and included in text extraction.
 11. Text inserted in a table cell appears in body-text extraction.
 
-Private verification scripts and result summaries live outside source control under `~/.local/share/docs-mcp/verification/`. The test document is retained as a synthetic fixture; this package does not implement Drive deletion. No existing document was used as a write fixture.
+Private verification scripts and result summaries live outside source control under `~/.local/share/google-docs-mcp/verification/`. The test document is retained as a synthetic fixture; this package does not implement Drive deletion. No existing document was used as a write fixture.
 
 These checks validate the listed behaviors, not every Google Docs UI action or every possible batch request. Google remains responsible for full request-schema and document-state validation. GitHub Actions repeats the offline gate and build on Python 3.11, 3.12, and 3.13.

@@ -130,7 +130,7 @@ def test_partial_consent_is_rejected(monkeypatch,granted):
 
 def test_default_path(monkeypatch):
     monkeypatch.delenv('GOOGLE_DOCS_TOKEN_FILE')
-    assert auth._token_path() == auth.Path('~/.config/docs-mcp/token.json').expanduser().absolute()
+    assert auth._token_path() == auth.Path('~/.config/google-docs-mcp/token.json').expanduser().absolute()
 
 
 def test_package_root_rejected():
@@ -195,7 +195,7 @@ def test_installed_package_allows_neighboring_private_credentials(monkeypatch,tm
 def test_unpacked_source_rejects_credentials_without_git(monkeypatch,tmp_path):
     source=tmp_path/'source'
     source.mkdir()
-    (source/'pyproject.toml').write_text('[project]\nname="docs-mcp"\n')
+    (source/'pyproject.toml').write_text('[project]\nname="google-docs-mcp"\n')
     monkeypatch.setattr(auth,'__file__',str(source/'src'/'docs_mcp'/'auth.py'))
     with pytest.raises(DocsError,match='outside source'):
         auth._check_token_path(source/'token.json')
